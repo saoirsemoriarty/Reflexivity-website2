@@ -91,6 +91,11 @@
             transition: color 0.3s ease;
         }
 
+        .logo:focus,
+        .logo:focus-visible {
+            outline: none;
+        }
+
         .logo span {
             color: var(--accent);
         }
@@ -361,6 +366,10 @@
             max-width: 640px;
             line-height: 1.7;
             margin-bottom: 3rem;
+        }
+
+        #about .section-desc:not(:last-child) {
+            margin-bottom: 1.25rem;
         }
 
         /* About & Services */
@@ -985,7 +994,6 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
             </ul>
@@ -1078,105 +1086,6 @@
                 <div class="service fade-up">
                     <h3>Learning partner</h3>
                     <p>We act as a learning partner and critical friend across multi-site programmes, supporting evaluation and helping synthesise and share learning as the work develops.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-it-works">
-        <div class="section-inner">
-            <div class="section-label fade-up">How It Works</div>
-            <h2 class="fade-up">A qualitative pipeline, step by step</h2>
-            <p class="section-desc fade-up">Every step is human-in-the-loop. AI accelerates the process, but our researchers oversee, validate, and interpret at every stage.</p>
-            <div class="timeline">
-                <div class="timeline-line"></div>
-
-                <div class="timeline-step badge-ai fade-up">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <div class="step-header">
-                            <h3>Interview scheduling</h3>
-                            <span class="step-badge">AI-powered</span>
-                        </div>
-                        <p>Our AI scheduling assistant reaches out to your list of participants (stakeholders, service users, staff) and arranges interviews at times that work for them. No back-and-forth emails, no admin burden on your team. You provide the contacts, we handle the rest.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-step badge-ai fade-up">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <div class="step-header">
-                            <h3>Compliance and consent</h3>
-                            <span class="step-badge">AI-powered</span>
-                        </div>
-                        <p>Before any interview takes place, our platform manages the paperwork. Participants receive consent forms, data handling agreements, and privacy notices automatically. Everything is logged and stored in line with GDPR, giving you a clear audit trail from day one.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-step badge-both fade-up">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <div class="step-header">
-                            <h3>Literature review</h3>
-                            <span class="step-badge">AI + Human</span>
-                        </div>
-                        <p>AI accelerates the search and synthesis of existing evidence: scanning databases, surfacing relevant studies, and identifying gaps. Our researchers guide the scope, assess quality, and ensure the review is grounded in methodological best practice.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-step badge-ai fade-up">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <div class="step-header">
-                            <h3>Surveys</h3>
-                            <span class="step-badge">AI-powered</span>
-                        </div>
-                        <p>We design, deploy, and manage surveys tailored to your evaluation questions. Responses are collected and analysed in real time, with findings fed back to you as they emerge, so you're not waiting until the end to see what participants think.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-step badge-human fade-up">
-                    <div class="step-number">05</div>
-                    <div class="step-content">
-                        <div class="step-header">
-                            <h3>Conduct interviews</h3>
-                            <span class="step-badge">Human-led</span>
-                        </div>
-                        <p>This is where we stay deliberately human. Our evaluation specialists lead every interview themselves, building rapport, following up on nuance, and adapting in real time. We don't believe the most important conversations in an evaluation should be handed to a chatbot.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-step badge-both fade-up">
-                    <div class="step-number">06</div>
-                    <div class="step-content">
-                        <div class="step-header">
-                            <h3>Additional qualitative data</h3>
-                            <span class="step-badge">AI + Human</span>
-                        </div>
-                        <p>If you have other documents or qualitative data that needs including case files, monitoring reports, and programme documentation, we feed it into the same analytical pipeline. This lets us triangulate findings across multiple sources, giving you a richer and more robust evidence base.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-step badge-both fade-up">
-                    <div class="step-number">07</div>
-                    <div class="step-content">
-                        <div class="step-header">
-                            <h3>Transcript analysis</h3>
-                            <span class="step-badge">AI + Human</span>
-                        </div>
-                        <p>Interview recordings are transcribed and processed using AI on secure, GDPR-compliant infrastructure. The system runs qualitative coding: identifying themes, patterns, and sentiment across your full dataset. Our researchers review and validate every output, and early insights are shared with you as they emerge to support decision-making in real time.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-step badge-both fade-up">
-                    <div class="step-number">08</div>
-                    <div class="step-content">
-                        <div class="step-header">
-                            <h3>Evaluation report</h3>
-                            <span class="step-badge">AI + Human</span>
-                        </div>
-                        <p>This is where the human touch matters most. We synthesise everything into a clear, rigorous evaluation report designed for decision-makers. Findings are grounded in evidence, structured around your evaluation questions, and shaped by the interpretive judgement that only experienced evaluators can bring. Delivered in time to actually inform the decisions it was commissioned to support.</p>
-                    </div>
                 </div>
             </div>
         </div>
