@@ -304,10 +304,67 @@
             border-top: 1px solid var(--border);
         }
 
-        /* Problem */
-        #problem {
+        /* Expertise */
+        #expertise {
             border-top: 1px solid var(--border);
         }
+
+        .lead {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 760px;
+            margin-bottom: 3rem;
+        }
+
+        .expertise-group {
+            margin-top: 2.5rem;
+        }
+
+        .expertise-group h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .expertise-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-strong);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: border-color 0.3s;
+        }
+
+        .expertise-card:hover {
+            border-color: var(--accent-border);
+        }
+
+        .expertise-card h4 {
+            color: var(--text);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .expertise-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        @media (max-width: 768px) {
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
 
         .problem-grid {
             display: grid;
@@ -769,7 +826,6 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#solution">Our Approach</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
@@ -781,10 +837,10 @@
         <div class="hero-content">
             <div class="hero-badge">End-to-End Evaluation Support</div>
             <h1>Evidence that keeps pace with <em>decisions</em></h1>
-            <p class="hero-sub">We provide end-to-end evaluation support, combining deep methodological expertise with AI to deliver faster, rigorous insights for public policy &mdash; without sacrificing integrity.</p>
+            <p class="hero-sub">We provide end-to-end evaluation support, combining deep methodological expertise with AI to deliver faster, rigorous insights for public policy, without sacrificing integrity.</p>
             <div class="hero-ctas">
                 <a href="#contact" class="btn-primary">Work With Us</a>
-                <a href="#solution" class="btn-secondary">Learn More</a>
+                <a href="#expertise" class="btn-secondary">Learn More</a>
             </div>
         </div>
     </section>
@@ -795,6 +851,51 @@
             <p class="section-desc fade-up" style="max-width: 720px;">We are an evaluation agency, specialising in evaluations of complex systems working with public health, health services and public policy.</p>
             <p class="section-desc fade-up" style="max-width: 720px;">We deliver rapid, rigorous insights that keep pace with decision making.</p>
             <p class="section-desc fade-up" style="max-width: 720px;">We use technology in a transparent, considered way, allowing you faster, more rigorous insights while keeping strong audit trails and human oversight.</p>
+        </div>
+    </section>
+
+    <section id="expertise">
+        <div class="section-inner">
+            <h2 class="fade-up">Areas of expertise</h2>
+            <p class="lead fade-up">We take a health equity lens to all of our work, asking who benefits and who is left out.</p>
+            <div class="expertise-group">
+                <h3 class="fade-up">What we evaluate</h3>
+                <div class="expertise-grid">
+                    <div class="expertise-card fade-up">
+                        <h4>Health services and systems</h4>
+                        <p>From a single service to a whole pathway or system: how it works in practice, where it falls short, and what would make it better.</p>
+                    </div>
+                    <div class="expertise-card fade-up">
+                        <h4>Public health programmes and policy</h4>
+                        <p>Prevention, screening and population health initiatives, from local pilot to national rollout.</p>
+                    </div>
+                    <div class="expertise-card fade-up">
+                        <h4>Place-based programmes</h4>
+                        <p>Interventions rooted in a particular neighbourhood, town or local system, where the setting is part of the intervention rather than the backdrop.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expertise-group">
+                <h3 class="fade-up">How we evaluate</h3>
+                <div class="expertise-grid">
+                    <div class="expertise-card fade-up">
+                        <h4>Realist and theory-based evaluation</h4>
+                        <p>For complex interventions with many moving parts: what works, for whom, in what circumstances, and why.</p>
+                    </div>
+                    <div class="expertise-card fade-up">
+                        <h4>Qualitative and mixed-methods evaluation</h4>
+                        <p>Interviews, observation and documents, analysed rigorously and combined with the numbers so that each explains the other.</p>
+                    </div>
+                    <div class="expertise-card fade-up">
+                        <h4>Quantitative and epidemiological analysis</h4>
+                        <p>Routine and survey data showing how health and service use vary by income, ethnicity, place, and other social conditions.</p>
+                    </div>
+                    <div class="expertise-card fade-up">
+                        <h4>Participatory evaluation</h4>
+                        <p>Working with the people who use and deliver a service to shape the questions, gather the evidence, and make sense of the findings.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -815,49 +916,6 @@
         </div>
     </section>
 
-    <section id="solution">
-        <div class="section-inner">
-            <div class="solution-grid">
-                <div class="solution-text">
-                    <div class="section-label fade-up">Our Approach</div>
-                    <h2 class="fade-up">Transparent, considered, and quality-assured throughout.</h2>
-                    <p class="fade-up">We are not a software platform, and we are not another technology company that underestimates the messiness of real-world policy. <strong>We understand the scepticism around AI and we share it.</strong></p>
-                    <p class="fade-up">Our model is built on human expertise first, with AI where it genuinely adds speed and rigour &mdash; and not where it doesn't. We understand the regulatory landscape around data in health and social care, and we take it seriously. Sensitive data can be processed locally on our own infrastructure &mdash; nothing leaves your premises unless you want it to. Where cloud processing is appropriate, we use secure, GDPR-compliant servers with full audit trails.</p>
-                </div>
-                <div class="solution-features">
-                    <div class="feature fade-up">
-                        <div class="feature-dot"></div>
-                        <div>
-                            <h4>Bespoke, Not Templated</h4>
-                            <p>We work alongside clients to design evaluations that fit their context. Where it adds value, we build and deploy custom models that run on your own hardware &mdash; no data leaving your laptop. We don't default to off-the-shelf AI when it isn't the right tool.</p>
-                        </div>
-                    </div>
-                    <div class="feature fade-up">
-                        <div class="feature-dot"></div>
-                        <div>
-                            <h4>AI-Accelerated Analysis</h4>
-                            <p>AI supports data processing, pattern recognition, and rapid evidence synthesis &mdash; preserving human judgement for interviews, interpretation, and stakeholder engagement.</p>
-                        </div>
-                    </div>
-                    <div class="feature fade-up">
-                        <div class="feature-dot"></div>
-                        <div>
-                            <h4>Compliant by Design</h4>
-                            <p>GDPR, health data regulations, and sector-specific requirements are built into our workflows from day one. Sensitive data stays on your infrastructure when needed, with full audit trails throughout.</p>
-                        </div>
-                    </div>
-                    <div class="feature fade-up">
-                        <div class="feature-dot"></div>
-                        <div>
-                            <h4>Real-Time Insights</h4>
-                            <p>Faster evidence that keeps pace with policy decision-making, so findings arrive when they're still needed.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="how-it-works">
         <div class="section-inner">
             <div class="section-label fade-up">How It Works</div>
@@ -873,7 +931,7 @@
                             <h3>Interview scheduling</h3>
                             <span class="step-badge">AI-powered</span>
                         </div>
-                        <p>Our AI scheduling assistant reaches out to your list of participants &mdash; stakeholders, service users, staff &mdash; and arranges interviews at times that work for them. No back-and-forth emails, no admin burden on your team. You provide the contacts, we handle the rest.</p>
+                        <p>Our AI scheduling assistant reaches out to your list of participants (stakeholders, service users, staff) and arranges interviews at times that work for them. No back-and-forth emails, no admin burden on your team. You provide the contacts, we handle the rest.</p>
                     </div>
                 </div>
 
@@ -895,7 +953,7 @@
                             <h3>Literature review</h3>
                             <span class="step-badge">AI + Human</span>
                         </div>
-                        <p>AI accelerates the search and synthesis of existing evidence &mdash; scanning databases, surfacing relevant studies, and identifying gaps. Our researchers guide the scope, assess quality, and ensure the review is grounded in methodological best practice.</p>
+                        <p>AI accelerates the search and synthesis of existing evidence: scanning databases, surfacing relevant studies, and identifying gaps. Our researchers guide the scope, assess quality, and ensure the review is grounded in methodological best practice.</p>
                     </div>
                 </div>
 
@@ -906,7 +964,7 @@
                             <h3>Surveys</h3>
                             <span class="step-badge">AI-powered</span>
                         </div>
-                        <p>We design, deploy, and manage surveys tailored to your evaluation questions. Responses are collected and analysed in real time, with findings fed back to you as they emerge &mdash; so you're not waiting until the end to see what participants think.</p>
+                        <p>We design, deploy, and manage surveys tailored to your evaluation questions. Responses are collected and analysed in real time, with findings fed back to you as they emerge, so you're not waiting until the end to see what participants think.</p>
                     </div>
                 </div>
 
@@ -917,7 +975,7 @@
                             <h3>Conduct interviews</h3>
                             <span class="step-badge">Human-led</span>
                         </div>
-                        <p>This is where we stay deliberately human. Our evaluation specialists lead every interview themselves &mdash; building rapport, following up on nuance, and adapting in real time. We don't believe the most important conversations in an evaluation should be handed to a chatbot.</p>
+                        <p>This is where we stay deliberately human. Our evaluation specialists lead every interview themselves, building rapport, following up on nuance, and adapting in real time. We don't believe the most important conversations in an evaluation should be handed to a chatbot.</p>
                     </div>
                 </div>
 
@@ -928,7 +986,7 @@
                             <h3>Additional qualitative data</h3>
                             <span class="step-badge">AI + Human</span>
                         </div>
-                        <p>If you have other documents or qualitative data that needs including &mdash; case files, monitoring reports, programme documentation &mdash; we feed it into the same analytical pipeline. This lets us triangulate findings across multiple sources, giving you a richer and more robust evidence base.</p>
+                        <p>If you have other documents or qualitative data that needs including case files, monitoring reports, and programme documentation, we feed it into the same analytical pipeline. This lets us triangulate findings across multiple sources, giving you a richer and more robust evidence base.</p>
                     </div>
                 </div>
 
@@ -939,7 +997,7 @@
                             <h3>Transcript analysis</h3>
                             <span class="step-badge">AI + Human</span>
                         </div>
-                        <p>Interview recordings are transcribed and processed using AI on secure, GDPR-compliant infrastructure. The system runs qualitative coding &mdash; identifying themes, patterns, and sentiment across your full dataset. Our researchers review and validate every output, and early insights are shared with you as they emerge to support decision-making in real time.</p>
+                        <p>Interview recordings are transcribed and processed using AI on secure, GDPR-compliant infrastructure. The system runs qualitative coding: identifying themes, patterns, and sentiment across your full dataset. Our researchers review and validate every output, and early insights are shared with you as they emerge to support decision-making in real time.</p>
                     </div>
                 </div>
 
