@@ -106,6 +106,7 @@
         .tile { display: flex; flex-direction: column; height: 100%; background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 14px; overflow: hidden; text-decoration: none; color: inherit; transition: border-color .3s, transform .3s; }
         .tile:hover { border-color: var(--accent-border); transform: translateY(-4px); }
         .tile-cover { aspect-ratio: 16 / 10; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; color: var(--on-ground); background: radial-gradient(120% 80% at 80% 10%, var(--ground-glow) 0%, rgba(var(--ground-rgb),0) 60%), linear-gradient(170deg, var(--ground-2), var(--ground)); }
+        .tile-img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 62%; }
         .tile-cover::before { content: ''; width: 36px; height: 3px; background: var(--terracotta); }
         .tile-cover span { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--on-ground-faint); }
         .tile-body { padding: 1.5rem 1.5rem 1.75rem; display: flex; flex-direction: column; flex: 1; }
@@ -162,19 +163,20 @@
         </div>
     </header>
 
-    <!-- NOTE: placeholder tile. Replace with the real report (make it an <a class="tile"> with a .tile-link). Add more <li class="fade-up"> tiles as reports are published. -->
+    <!-- Add more <li class="fade-up"> tiles as reports are published. -->
     <section id="work">
         <div class="section-inner">
             <ul class="tiles">
                 <li class="fade-up">
-                    <div class="tile">
-                        <div class="tile-cover"><span>Report</span></div>
+                    <a href="somewhere-to-go.pdf" class="tile" target="_blank" rel="noopener">
+                        <img class="tile-img" src="somewhere-to-go.jpg" alt="The refurbished half-court on the Wyndham and Comber estate, with Games Please painted on the wall" loading="lazy">
                         <div class="tile-body">
-                            <div class="tile-date">Coming soon</div>
-                            <h3>New report</h3>
-                            <p>Our latest report will be published here shortly.</p>
+                            <div class="tile-date">October 2026</div>
+                            <h3>Somewhere to go: an evaluation of the Wyndham and Comber estate half-court</h3>
+                            <p>How the half-court contributes to residents' health and wellbeing.</p>
+                            <span class="tile-link">Read the report (PDF)</span>
                         </div>
-                    </div>
+                    </a>
                 </li>
             </ul>
         </div>
