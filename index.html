@@ -372,6 +372,91 @@
             margin-bottom: 1.25rem;
         }
 
+        /* Our Work: report tiles */
+        #work {
+            padding-top: 5rem;
+        }
+
+        .tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.75rem;
+            list-style: none;
+            margin-top: 2.5rem;
+        }
+
+        .tile {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-strong);
+            border-radius: 14px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .tile:hover {
+            border-color: var(--accent-border);
+            transform: translateY(-4px);
+        }
+
+        .tile-img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            object-position: 50% 62%;
+        }
+
+        .tile-body {
+            padding: 1.5rem 1.5rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .tile-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .tile h3 {
+            font-family: 'Instrument Serif', serif;
+            font-weight: 400;
+            font-size: 1.55rem;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+        }
+
+        .tile p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 1.25rem;
+        }
+
+        .tile-link {
+            margin-top: auto;
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .tile-link::after {
+            content: '\2192';
+            margin-left: 0.4rem;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .tile:hover .tile-link::after {
+            transform: translateX(3px);
+        }
+
         /* About & Services */
         #about, #services {
             border-top: 1px solid var(--border);
@@ -1019,7 +1104,7 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="reports.html">Our Work</a></li>
+                <li><a href="#work">Our Work</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#team">Team</a></li>
@@ -1037,6 +1122,25 @@
                 <a href="#contact" class="btn-primary">Work With Us</a>
                 <a href="#about" class="btn-secondary">Learn More</a>
             </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <div class="section-inner">
+            <h2 class="fade-up">Our Work</h2>
+            <ul class="tiles">
+                <li class="fade-up">
+                    <a href="somewhere-to-go.html" class="tile">
+                        <img class="tile-img" src="somewhere-to-go.jpg" alt="The refurbished half-court on the Wyndham and Comber estate, with Games Please painted on the wall" loading="lazy">
+                        <div class="tile-body">
+                            <div class="tile-date">October 2026</div>
+                            <h3>Somewhere to go: an evaluation of the Wyndham and Comber estate half-court</h3>
+                            <p>How the half-court contributes to residents' health and wellbeing.</p>
+                            <span class="tile-link">Read the report</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
         </div>
     </section>
 

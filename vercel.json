@@ -1,4 +1,7 @@
 {
   "buildCommand": "",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    { "source": "/reports.html", "destination": "/#work", "permanent": false }
+  ]
 }
