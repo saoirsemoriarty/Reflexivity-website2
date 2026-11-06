@@ -1125,12 +1125,14 @@
         @media (max-width: 768px) { .page-hero { padding: 7.5rem 1.25rem 3.5rem; } }
         @media (min-width: 1024px) {
             /* Desktop: use the width. Who we are / Our vision sit side by side; the offer pairs its text with the button. */
-            /* Our Work and the free-evaluations offer sit side by side */
-            .work-offer { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 0 4rem; padding: 0 max(2rem, calc((100% - 1100px) / 2)); align-items: start; }
+            /* Our Work and the free-evaluations offer sit side by side, equal width, equal height */
+            .work-offer { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 3rem; padding: 0 max(2rem, calc((100% - 1100px) / 2)); align-items: stretch; }
             .work-offer > section { padding-left: 0; padding-right: 0; }
-            .work-offer > #offer { border-top: 0; margin-top: 5rem; padding: 2rem; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border); }
-            .work-offer > #offer h2 { font-size: 1.9rem; }
-            .work-offer > #offer .section-desc { font-size: 1rem; }
+            .work-offer .tiles { grid-template-columns: 1fr; }
+            .work-offer > #offer { border-top: 0; margin: 5rem 0 6rem; padding: 2.5rem; background: var(--bg-card); border-radius: 14px; border: 1px solid var(--border-strong); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+            .work-offer > #offer .section-inner { max-width: none; margin: 0; }
+            .work-offer > #offer h2 { font-size: 2.2rem; }
+            .work-offer > #offer .section-desc { font-size: 1.1rem; max-width: none !important; }
             #about .about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 5rem; }
             #about .about-cols h2 { margin-top: 0 !important; }
             #about .about-cols .section-desc { max-width: none !important; }
