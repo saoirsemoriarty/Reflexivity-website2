@@ -1099,7 +1099,9 @@
         /* Home page alternates dark blue and grey: hero (dark), work (grey), who we are (dark), contact (grey) */
         .on-grey { background: var(--bg-cta); --bg-card: #f8fafc; --border: rgba(30, 41, 59, 0.1); }
         .cta-light { background: var(--bg-cta); color: var(--text); border-top: 0; }
-        .cta-light .cta-net, .cta-light::after { display: none; }
+        /* Same animated network as the hero, drawn in dark blue on the grey ground */
+        .cta-light .cta-net { opacity: 1; }
+        .cta-light::after { background: linear-gradient(90deg, rgba(226, 232, 238, 0.92) 0%, rgba(226, 232, 238, 0.55) 36%, rgba(226, 232, 238, 0) 66%); }
         .cta-light .cta-box h2 { color: var(--text); }
         .cta-light .cta-box p { color: var(--text-secondary); }
 
@@ -1129,7 +1131,7 @@
             .work-offer { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 3rem; padding: 0 max(2rem, calc((100% - 1100px) / 2)); align-items: stretch; }
             .work-offer > section { padding-left: 0; padding-right: 0; }
             .work-offer .tiles { grid-template-columns: 1fr; }
-            .work-offer > #offer { border-top: 0; margin: 5rem 0 6rem; padding: 2.5rem; background: var(--bg-card); border-radius: 14px; border: 1px solid var(--border-strong); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+            .work-offer > #offer { border-top: 0; margin: calc(5rem + 1.1 * clamp(2rem, 1.2rem + 2vw, 2.9rem) + 2.5rem) 0 6rem; padding: 2.5rem; background: var(--bg-card); border-radius: 14px; border: 1px solid var(--border-strong); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
             .work-offer > #offer .section-inner { max-width: none; margin: 0; }
             .work-offer > #offer h2 { font-size: 2.2rem; }
             .work-offer > #offer .section-desc { font-size: 1.1rem; max-width: none !important; }
@@ -1396,7 +1398,7 @@
                             const d = Math.hypot(a.x - b.x, a.y - b.y);
                             if (d < md) {
                                 const al = (1 - d / md) * this.o.lineAlpha;
-                                ctx.strokeStyle = `rgba(${RGB.white},${al.toFixed(3)})`;
+                                ctx.strokeStyle = `rgba(${this.o.ink || RGB.white},${al.toFixed(3)})`;
                                 ctx.beginPath();
                                 ctx.moveTo(a.x, a.y);
                                 ctx.lineTo(b.x, b.y);
@@ -1412,7 +1414,7 @@
                             ctx.fill();
                             ctx.fillStyle = `rgba(${RGB[a.kind]},0.95)`;
                         } else {
-                            ctx.fillStyle = `rgba(${RGB.white},0.72)`;
+                            ctx.fillStyle = `rgba(${this.o.ink || RGB.white},0.72)`;
                         }
                         ctx.beginPath();
                         ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
@@ -1444,7 +1446,7 @@
             const heroNet = document.getElementById('hero-net');
             const ctaNet = document.getElementById('cta-net');
             if (heroNet) new Network(heroNet, { density: 13000, max: 110, lineAlpha: 0.30, animate: true, pulses: true });
-            if (ctaNet) new Network(ctaNet, { density: 22000, max: 60, lineAlpha: 0.22, animate: false, pulses: false });
+            if (ctaNet) new Network(ctaNet, { density: 13000, max: 110, lineAlpha: 0.40, animate: true, pulses: true, ink: '15,52,73' });
         })();
     </script>
     <!-- Vercel Web Analytics: cookieless page-view counts. Needs Analytics enabled in the Vercel project dashboard. -->
