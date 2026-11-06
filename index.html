@@ -559,7 +559,6 @@
             }
         }
 
-
         .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1095,6 +1094,23 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Sub-page header: shorter variant of the hero */
+        .page-hero { padding: clamp(8rem, 16vw, 11rem) 2rem clamp(3.5rem, 7vw, 5.5rem); }
+        .page-hero + section { border-top: 0; }
+        .more-link { display: inline-block; color: var(--accent); font-weight: 500; font-size: 0.95rem; text-decoration: none; }
+        .more-link::after { content: '\2192'; margin-left: 0.4rem; display: inline-block; transition: transform 0.2s; }
+        .more-link:hover::after { transform: translateX(3px); }
+        @media (max-width: 768px) { .page-hero { padding: 7.5rem 1.25rem 3.5rem; } }
+        @media (min-width: 1024px) {
+            /* Desktop: use the width. Who we are / Our vision sit side by side; the offer pairs its text with the button. */
+            #about .about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 5rem; }
+            #about .about-cols h2 { margin-top: 0 !important; }
+            #about .about-cols .section-desc { max-width: none !important; }
+            #offer .section-inner { display: grid; grid-template-columns: minmax(0, 720px) 1fr; column-gap: 4rem; align-items: center; }
+            #offer .section-inner > h2, #offer .section-inner > .section-desc { grid-column: 1; }
+            #offer .section-inner > .btn-primary { grid-column: 2; grid-row: 1 / span 3; justify-self: end; }
+        }
     </style>
 </head>
 <body>
@@ -1107,9 +1123,8 @@
             <ul class="nav-links">
                 <li><a href="#work">Our Work</a></li>
                 <li><a href="#offer">Free evaluations</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#team">Team</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
             </ul>
         </div>
@@ -1122,7 +1137,7 @@
             <p class="hero-sub">We bring rapid and rigorous insights to improve outcomes and understanding across systems, places and people.</p>
             <div class="hero-ctas">
                 <a href="#contact" class="btn-primary">Work With Us</a>
-                <a href="#about" class="btn-secondary">Learn More</a>
+                <a href="about.html" class="btn-secondary">Learn More</a>
             </div>
         </div>
     </section>
@@ -1159,111 +1174,7 @@
         <div class="section-inner">
             <h2 class="fade-up">Who we are</h2>
             <p class="section-desc fade-up" style="max-width: 720px;">We are a small, independent start-up of public health, evaluation and technology specialists. We evaluate complex programmes in public health, health services and public policy, and we use technology, including AI, transparently and only where it strengthens our work, with human oversight throughout.</p>
-            <h2 class="fade-up" style="margin-top: 2.5rem;">Why we exist</h2>
-            <p class="section-desc fade-up" style="max-width: 720px;">Public health decisions shape people's lives. But they are made with stretched budgets, against deep and growing inequalities, and often without the evidence decision-makers need.</p>
-            <p class="section-desc fade-up" style="max-width: 720px;">Traditional evaluation is slow. Research management takes time, and findings too often arrive after the decision has been made.</p>
-            <p class="section-desc fade-up" style="max-width: 720px;">We believe it can be done differently. By combining public health expertise with careful use of AI, we can deliver rigorous evidence faster, and spend the time saved where it matters: listening to the people a programme serves, and bringing more voices into decisions.</p>
-        </div>
-    </section>
-
-    <section id="services">
-        <div class="section-inner">
-            <div class="section-label fade-up">Our Services</div>
-            <h2 class="fade-up">What we offer</h2>
-            <div class="services-grid">
-                <div class="service fade-up">
-                    <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="12" r="2.5"/><path d="M7.5 12h9"/><path d="M14 9.5l2.5 2.5-2.5 2.5"/></svg>
-                    <h3>End-to-end evaluation</h3>
-                    <p>We design and deliver full evaluations, from framework and data collection through to analysis, reporting and recommendations.</p>
-                </div>
-                <div class="service fade-up">
-                    <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><rect x="5" y="14" width="3.5" height="6"/><rect x="10.25" y="10" width="3.5" height="10"/><rect x="15.5" y="5" width="3.5" height="15"/></svg>
-                    <h3>Evaluation capacity building</h3>
-                    <p>Have in-house evaluation capacity, but want to improve your systems? We work alongside staff to build sustainable technology-supported evaluation workflows.</p>
-                </div>
-                <div class="service fade-up">
-                    <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h11v8H8l-3 3v-3H3z"/><path d="M17 9h4v8h-2v3l-3-3h-5v-2"/></svg>
-                    <h3>Learning partner</h3>
-                    <p>We act as a learning partner and critical friend across multi-site programmes, supporting evaluation and helping synthesise and share learning as the work develops.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="expertise">
-        <div class="section-inner">
-            <div class="expertise-head">
-                <h2 class="fade-up">Areas of expertise</h2>
-                <p class="lead fade-up">We take a health equity lens to all of our work, asking who benefits and who is left out.</p>
-            </div>
-            <div class="expertise-cols">
-                <div class="expertise-group">
-                    <h3 class="fade-up">What we evaluate</h3>
-                    <div class="expertise-grid">
-                        <div class="expertise-card fade-up">
-                            <h4>Health services and systems</h4>
-                            <p>From a single service to a whole pathway or system: how it works in practice, where it falls short, and what would make it better.</p>
-                        </div>
-                        <div class="expertise-card fade-up">
-                            <h4>Public health programmes and policy</h4>
-                            <p>Prevention, screening and population health initiatives, from local pilot to national rollout.</p>
-                        </div>
-                        <div class="expertise-card fade-up">
-                            <h4>Place-based programmes</h4>
-                            <p>Interventions rooted in a particular neighbourhood, town or local system, where the setting is part of the intervention.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="expertise-group">
-                    <h3 class="fade-up">How we evaluate</h3>
-                    <div class="expertise-grid">
-                        <div class="expertise-card fade-up">
-                            <h4>Realist and theory-based evaluation</h4>
-                            <p>For complex interventions with many moving parts: what works, for whom, in what circumstances, and why.</p>
-                        </div>
-                        <div class="expertise-card fade-up">
-                            <h4>Qualitative and mixed-methods evaluation</h4>
-                            <p>Interviews, observation and documents, analysed rigorously and combined with the numbers so that each explains the other.</p>
-                        </div>
-                        <div class="expertise-card fade-up">
-                            <h4>Quantitative and epidemiological analysis</h4>
-                            <p>Routine and survey data showing how health and service use vary by income, ethnicity, place, and other social conditions.</p>
-                        </div>
-                        <div class="expertise-card fade-up">
-                            <h4>Participatory evaluation</h4>
-                            <p>Working with the people who use and deliver a service to shape the questions, gather the evidence, and make sense of the findings.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="team">
-        <div class="section-inner">
-            <div class="section-label fade-up">Our Team</div>
-            <h2 class="fade-up">An interdisciplinary team</h2>
-            <p class="section-desc fade-up">We combine methodological expertise, domain knowledge and AI capability in an integrated practice.</p>
-            <div class="team-grid">
-                <div class="team-card fade-up">
-                    <div class="team-avatar"><img src="BW_NT.jpg" alt="Saoirse Moriarty"></div>
-                    <h3>Saoirse Moriarty</h3>
-                    <div class="team-role">Academic Lead</div>
-                    <p>Saoirse is currently pursuing a PhD in Social Epidemiology at UCL, looking at the environments around schools such as air pollution and heat and how it affects children's health outcomes. She holds an MSc in Public Health. Saoirse has five years of experience in evaluations of the health sector and in health policy.</p>
-                    <div class="team-links">
-                        <a href="https://www.linkedin.com/in/saoirse-moriarty-700582159/" target="_blank" rel="noopener">LinkedIn &rarr;</a>
-                    </div>
-                </div>
-                <div class="team-card fade-up">
-                    <div class="team-avatar"><img src="nils.jpg" alt="Nils Strassenburg"></div>
-                    <h3>Nils Strassenburg</h3>
-                    <div class="team-role">Technical Lead</div>
-                    <p>Nils has nearly ten years of experience in software development and machine learning research. His research focuses on how machine learning models can be reused or replaced with cheaper alternatives, making ML more affordable, practical, and sustainable. At Reflexivity he leads development of our qualitative analysis pipeline and oversees data management and governance.</p>
-                    <div class="team-links">
-                        <a href="https://www.linkedin.com/in/nils-strassenburg/" target="_blank" rel="noopener">LinkedIn &rarr;</a>
-                    </div>
-                </div>
-            </div>
+            <a href="about.html" class="more-link fade-up">More about us and our team</a>
         </div>
     </section>
 
