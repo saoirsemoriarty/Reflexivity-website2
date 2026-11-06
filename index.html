@@ -1007,7 +1007,8 @@
 
         /* Dark sections: every second section on the page uses the dark ground */
         #expertise,
-        #team {
+        #team,
+        #about.on-dark {
             background: var(--ground);
             border-top: 0;
             --text: #ffffff;
@@ -1095,6 +1096,26 @@
             transform: translateY(0);
         }
 
+        /* Home page alternates dark blue and grey: hero (dark), work (grey), who we are (dark), contact (grey) */
+        .on-grey { background: var(--bg-cta); --bg-card: #f8fafc; --border: rgba(30, 41, 59, 0.1); }
+        .cta-light { background: var(--bg-cta); color: var(--text); border-top: 0; }
+        .cta-light .cta-net, .cta-light::after { display: none; }
+        .cta-light .cta-box h2 { color: var(--text); }
+        .cta-light .cta-box p { color: var(--text-secondary); }
+
+        /* Home: who we are with the two founders */
+        .about-people { list-style: none; display: flex; gap: 1.5rem; margin-top: 2rem; }
+        .about-people li { display: flex; flex-direction: column; align-items: center; text-align: center; width: 128px; }
+        .about-people img { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 3px solid var(--border-strong); margin-bottom: 0.75rem; }
+        .about-people .person-name { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+        .about-people .person-role { font-size: 0.8rem; color: var(--text-muted); }
+        @media (min-width: 1024px) {
+            .about-intro { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4rem; align-items: center; }
+            .about-people { margin-top: 0; gap: 2.5rem; }
+            .about-people li { width: 168px; }
+            .about-people img { width: 160px; height: 160px; }
+        }
+
         /* Sub-page header: shorter variant of the hero */
         .page-hero { padding: clamp(8rem, 16vw, 11rem) 2rem clamp(3.5rem, 7vw, 5.5rem); }
         .page-hero + section { border-top: 0; }
@@ -1104,12 +1125,15 @@
         @media (max-width: 768px) { .page-hero { padding: 7.5rem 1.25rem 3.5rem; } }
         @media (min-width: 1024px) {
             /* Desktop: use the width. Who we are / Our vision sit side by side; the offer pairs its text with the button. */
+            /* Our Work and the free-evaluations offer sit side by side */
+            .work-offer { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 0 4rem; padding: 0 max(2rem, calc((100% - 1100px) / 2)); align-items: start; }
+            .work-offer > section { padding-left: 0; padding-right: 0; }
+            .work-offer > #offer { border-top: 0; margin-top: 5rem; padding: 2rem; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border); }
+            .work-offer > #offer h2 { font-size: 1.9rem; }
+            .work-offer > #offer .section-desc { font-size: 1rem; }
             #about .about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 5rem; }
             #about .about-cols h2 { margin-top: 0 !important; }
             #about .about-cols .section-desc { max-width: none !important; }
-            #offer .section-inner { display: grid; grid-template-columns: minmax(0, 720px) 1fr; column-gap: 4rem; align-items: center; }
-            #offer .section-inner > h2, #offer .section-inner > .section-desc { grid-column: 1; }
-            #offer .section-inner > .btn-primary { grid-column: 2; grid-row: 1 / span 3; justify-self: end; }
         }
     </style>
 </head>
@@ -1142,6 +1166,7 @@
         </div>
     </section>
 
+    <div class="work-offer on-grey">
     <section id="work">
         <div class="section-inner">
             <h2 class="fade-up">Our Work</h2>
@@ -1169,16 +1194,23 @@
             <a href="#contact" class="btn-primary fade-up">Get in touch</a>
         </div>
     </section>
+    </div>
 
-    <section id="about">
-        <div class="section-inner">
+    <section id="about" class="on-dark">
+        <div class="section-inner about-intro">
+            <div class="about-intro-text">
             <h2 class="fade-up">Who we are</h2>
             <p class="section-desc fade-up" style="max-width: 720px;">We are a small, independent start-up of public health, evaluation and technology specialists. We evaluate complex programmes in public health, health services and public policy, and we use technology, including AI, transparently and only where it strengthens our work, with human oversight throughout.</p>
             <a href="about.html" class="more-link fade-up">More about us and our team</a>
+            </div>
+            <ul class="about-people fade-up">
+                <li><img src="BW_NT.jpg" alt="Saoirse Moriarty" loading="lazy"><span class="person-name">Saoirse Moriarty</span><span class="person-role">Academic Lead</span></li>
+                <li><img src="nils.jpg" alt="Nils Strassenburg" loading="lazy"><span class="person-name">Nils Strassenburg</span><span class="person-role">Technical Lead</span></li>
+            </ul>
         </div>
     </section>
 
-    <section id="contact" class="cta-section">
+    <section id="contact" class="cta-section cta-light">
         <canvas id="cta-net" class="cta-net" aria-hidden="true"></canvas>
         <div class="section-inner">
             <div class="cta-box fade-up">
