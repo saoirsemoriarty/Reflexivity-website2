@@ -369,7 +369,7 @@
         }
 
         #about .section-desc:not(:last-child),
-        #offer .section-desc:not(:last-child) {
+        #offer .section-desc:not(:last-child), #offer .offer-lead {
             margin-bottom: 1.25rem;
         }
 
@@ -1096,6 +1096,7 @@
             transform: translateY(0);
         }
 
+        #offer .offer-lead { font-size: 1.1rem; font-weight: 600; color: var(--accent); line-height: 1.5; margin-bottom: 1rem; }
         /* Sub-page header: shorter variant of the hero */
         .page-hero { padding: clamp(8rem, 16vw, 11rem) 2rem clamp(3.5rem, 7vw, 5.5rem); }
         .page-hero + section { border-top: 0; }
@@ -1103,15 +1104,6 @@
         .more-link::after { content: '\2192'; margin-left: 0.4rem; display: inline-block; transition: transform 0.2s; }
         .more-link:hover::after { transform: translateX(3px); }
         @media (max-width: 768px) { .page-hero { padding: 7.5rem 1.25rem 3.5rem; } }
-        @media (min-width: 1024px) {
-            /* Desktop: use the width. Who we are / Our vision sit side by side; the offer pairs its text with the button. */
-            #about .about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 5rem; }
-            #about .about-cols h2 { margin-top: 0 !important; }
-            #about .about-cols .section-desc { max-width: none !important; }
-            #offer .section-inner { display: grid; grid-template-columns: minmax(0, 720px) 1fr; column-gap: 4rem; align-items: center; }
-            #offer .section-inner > h2, #offer .section-inner > .section-desc { grid-column: 1; }
-            #offer .section-inner > .btn-primary { grid-column: 2; grid-row: 1 / span 3; justify-self: end; }
-        }
     </style>
 </head>
 <body>
@@ -1135,6 +1127,16 @@
         <div class="hero-content">
             <h1>Services</h1>
             <p class="hero-sub">How we evaluate complex programmes, and where our expertise lies.</p>
+        </div>
+    </section>
+
+    <section id="offer">
+        <div class="section-inner">
+            <h2 class="fade-up">Five free evaluations</h2>
+            <p class="offer-lead fade-up">We're looking for early stage partners to test and refine our approach.</p>
+            <p class="section-desc fade-up" style="max-width: 720px;">We are a young company who are confident our approach works and are looking for partners with whom to keep refining and testing it. This year we are offering five evaluations pro bono, for projects worth up to £20,000.</p>
+            <p class="section-desc fade-up" style="max-width: 720px;">Have you run a project in the last year that you would like to understand better? We would love to help.</p>
+            <a href="#contact" class="btn-primary fade-up">Get in touch</a>
         </div>
     </section>
 

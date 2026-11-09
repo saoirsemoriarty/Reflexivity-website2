@@ -1105,12 +1105,18 @@
         @media (max-width: 768px) { .page-hero { padding: 7.5rem 1.25rem 3.5rem; } }
         @media (min-width: 1024px) {
             /* Desktop: use the width. Who we are / Our vision sit side by side; the offer pairs its text with the button. */
-            #about .about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 5rem; }
-            #about .about-cols h2 { margin-top: 0 !important; }
-            #about .about-cols .section-desc { max-width: none !important; }
             #offer .section-inner { display: grid; grid-template-columns: minmax(0, 720px) 1fr; column-gap: 4rem; align-items: center; }
             #offer .section-inner > h2, #offer .section-inner > .section-desc { grid-column: 1; }
             #offer .section-inner > .btn-primary { grid-column: 2; grid-row: 1 / span 3; justify-self: end; }
+        }
+        /* About: vision first, with an illustration beside it on desktop */
+        #vision .vision-art { background: var(--bg-card); border-radius: 14px; padding: 1.5rem; margin-top: 2rem; }
+        #vision .vision-art img { display: block; width: 100%; height: auto; }
+        #vision .section-desc:not(:last-child) { margin-bottom: 1.25rem; }
+        #about { padding-top: 0; border-top: 0; }
+        @media (min-width: 1024px) {
+            #vision .vision-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 460px); gap: 4rem; align-items: center; }
+            #vision .vision-art { margin-top: 0; }
         }
     </style>
 </head>
@@ -1138,20 +1144,22 @@
         </div>
     </section>
 
+    <section id="vision">
+        <div class="section-inner vision-grid">
+            <div class="vision-text">
+                <h2 class="fade-up">Our vision</h2>
+                <p class="section-desc fade-up" style="max-width: 720px;">Public health decisions shape people's lives. But they are made with stretched budgets, against deep and growing inequalities, and often without the evidence decision-makers need.</p>
+                <p class="section-desc fade-up" style="max-width: 720px;">Traditional evaluation is slow. Research management takes time, and findings too often arrive after the decision has been made.</p>
+                <p class="section-desc fade-up" style="max-width: 720px;">We believe it can be done differently. By combining public health expertise with careful use of AI, we can deliver rigorous evidence faster, and spend the time saved where it matters: listening to the people a programme serves, and bringing more voices into decisions.</p>
+            </div>
+            <div class="vision-art fade-up"><img src="vision.svg" alt="Many people connected to a shared decision, illustrating more voices informing public health choices" loading="lazy"></div>
+        </div>
+    </section>
+
     <section id="about">
         <div class="section-inner">
-            <div class="about-cols">
-            <div>
             <h2 class="fade-up">Who we are</h2>
             <p class="section-desc fade-up" style="max-width: 720px;">We are a small, independent start-up of public health, evaluation and technology specialists. We evaluate complex programmes in public health, health services and public policy, and we use technology, including AI, transparently and only where it strengthens our work, with human oversight throughout.</p>
-            </div>
-            <div>
-            <h2 class="fade-up" style="margin-top: 2.5rem;">Our vision</h2>
-            <p class="section-desc fade-up" style="max-width: 720px;">Public health decisions shape people's lives. But they are made with stretched budgets, against deep and growing inequalities, and often without the evidence decision-makers need.</p>
-            <p class="section-desc fade-up" style="max-width: 720px;">Traditional evaluation is slow. Research management takes time, and findings too often arrive after the decision has been made.</p>
-            <p class="section-desc fade-up" style="max-width: 720px;">We believe it can be done differently. By combining public health expertise with careful use of AI, we can deliver rigorous evidence faster, and spend the time saved where it matters: listening to the people a programme serves, and bringing more voices into decisions.</p>
-            </div>
-            </div>
         </div>
     </section>
 
